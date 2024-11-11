@@ -11,15 +11,39 @@ python = "^3.12"
 django = "^5.0"
 psycopg2 = "^2.9.9"
 django-split-settings = "^1.3.0"
+daphne = "^4.1.2"
+djangorestframework = "^3.15.2"
+django-storages = "^1.14.4"
+pillow = "^11.0.0"
+pydantic = "^2.9.2"
+whitenoise = "^6.8.2"
+pynacl = "^1.5.0"
+pyyaml = "^6.0.2"
+django-model-utils = "^5.0.0"
+django-cors-headers = "^4.6.0"
+boto3 = "^1.35.58"
+channels = {extras = ["daphne"], version = "^4.1.0"}
 
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.6.2"
 colorlog = "^6.8.2"
+django-debug-toolbar = "^4.1.0"
+pytest = "^7.4.0"
+pytest-django = "^4.5.2"
+pytest-xdist = "^3.3.1"
+model-bakery = "^1.12.0"
 
 [tool.isort]
 multi_line_output = 5
 line_length = 119
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "app.alice.settings"
+django_find_project = false
+python_files = "test_*.py"
+testpaths = ["app"]
+filterwarnings = "ignore::DeprecationWarning:^(?!node\\.).*:"
 
 [tool.yapf]
 based_on_style = "google"
