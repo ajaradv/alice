@@ -1,5 +1,5 @@
 # Use an official Python runtime as the base image
-FROM python:3.12-alpine
+FROM python:3.13-bullseye
 
 # Set the working directory in the container
 WORKDIR /opt/project
@@ -10,19 +10,20 @@ ENV PYTHONPATH .
 ENV ALICE_SETTING_IN_DOCKER true
 
 # Install dependencies
-#RUN set -xe \
-#    && apt-get update \
-#    && apt-get install -y --no-install-recommends build-essential \
-#    && pip install virtualenvwrapper poetry==1.4.2 \
-#    && apt-get clean \
-#    && rm -rf /var/lib/apt/lists/*
+RUN set -xe \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && pip install virtualenvwrapper poetry==1.4.2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apk update && \
-    apk add --no-cache wget && \
-    apk add --no-cache build-base libffi-dev openssl-dev && \
-    apk add libpq-dev && \
-    apk add python3 py3-pip gcc musl-dev && \
-    pip install virtualenvwrapper poetry==1.4.2
+# For alpine based images use apk
+#RUN apk update && \
+#    apk add --no-cache wget && \
+#    apk add --no-cache build-base libffi-dev openssl-dev && \
+#    apk add libpq-dev && \
+#    apk add python3 py3-pip gcc musl-dev && \
+#    pip install virtualenvwrapper poetry==1.4.2
 # Copy and install Python dependencies
 COPY ["poetry.lock", "pyproject.toml", "./"]
 RUN poetry install --no-root
