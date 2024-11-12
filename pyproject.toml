@@ -5,6 +5,7 @@ description = "alice webservice"
 authors = ["ALEXANDER VEGA <ajaradv@gmail.com>"]
 license = "mit"
 readme = "README.md"
+packages = [{include = "alice"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -23,6 +24,8 @@ django-model-utils = "^5.0.0"
 django-cors-headers = "^4.6.0"
 boto3 = "^1.35.58"
 channels = {extras = ["daphne"], version = "^4.1.0"}
+djangorestframework-simplejwt = "^5.3.1"
+django-filter = "^24.3"
 
 
 [tool.poetry.group.dev.dependencies]

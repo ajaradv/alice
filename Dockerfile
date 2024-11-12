@@ -7,12 +7,13 @@ WORKDIR /opt/project
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONPATH .
-ENV ALICE_SETTING_IN_DOCKER true
+ENV APP_SETTING_IN_DOCKER true
 
 # Install dependencies
 RUN set -xe \
     && apt-get update \
     && apt-get install -y --no-install-recommends build-essential \
+    && apt-get install -y libpq-dev gcc \
     && pip install virtualenvwrapper poetry==1.4.2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

@@ -1,8 +1,9 @@
 import os.path
 from pathlib import Path
 
-from core.utils.pytest import is_pytest_running
 from split_settings.tools import include, optional
+
+from app.core.utils.pytest import is_pytest_running
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
