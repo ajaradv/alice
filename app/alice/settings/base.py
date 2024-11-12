@@ -46,8 +46,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'alice.wsgi.application'
-ASGI_APPLICATION = 'alice.asgi.application'
+WSGI_APPLICATION = 'app.alice.wsgi.application'
+ASGI_APPLICATION = 'app.alice.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
