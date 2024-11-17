@@ -37,7 +37,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'alice.urls'
+ROOT_URLCONF = 'app.alice.urls'
 
 TEMPLATES = [
     {
