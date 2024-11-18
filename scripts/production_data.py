@@ -1,5 +1,6 @@
-from cooking_core.general.utils.cryptography import generate_key_pair
 from django.core.management.utils import get_random_secret_key
+
+from app.core.utils.cryptography import generate_key_pair
 
 
 def generate_account():
