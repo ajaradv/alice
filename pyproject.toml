@@ -8,7 +8,7 @@ readme = "README.md"
 packages = [{include = "alice"}]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.13"
 django = "^5.0"
 psycopg2 = "^2.9.9"
 django-split-settings = "^1.3.0"
