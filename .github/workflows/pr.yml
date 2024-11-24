@@ -23,6 +23,10 @@ jobs:
         with:
           poetry-version: latest
 
+      - name: Setup Git
+        run: |
+          git config --global --add safe.directory $GITHUB_WORKSPACE
+
       - name: Install Dependencies
         run: make install && make install-pre-commit
 
