@@ -7,7 +7,7 @@ repos:
       - id: isort
         name: isort (python)
   - repo: https://github.com/google/yapf
-    rev: v0.31.0
+    rev: v0.43.0
     hooks:
       - id: yapf
         additional_dependencies: [toml]
