@@ -27,9 +27,6 @@ jobs:
         run: |
           git config --global --add safe.directory $GITHUB_WORKSPACE
 
-      - name: Upgrade yaml-stubs
-        run: pip install --upgrade yaml-stubs
-
       - name: Install Dependencies
         run: make install && make install-pre-commit
 
