@@ -5,7 +5,7 @@ jobs:
   quality-assurance:
     name: Quality Assurance
     runs-on: ubuntu-latest
-    container: python:3.13-bullseye
+    #container: python:3.13-bullseye
 
     services:
       db:
