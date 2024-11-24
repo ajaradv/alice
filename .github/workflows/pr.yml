@@ -8,12 +8,12 @@ jobs:
     container: python:3.13-bullseye
 
     services:
-    db:
-      image: postgres:14.2-alpine
-      env:
-        POSTGRES_DB: alice_core
-        POSTGRES_USER: alice_core
-        POSTGRES_PASSWORD: alice_core
+      db:
+        image: postgres:14.2-alpine
+        env:
+          POSTGRES_DB: alice_core
+          POSTGRES_USER: alice_core
+          POSTGRES_PASSWORD: alice_core
 
     steps:
       - uses: actions/checkout@v2
