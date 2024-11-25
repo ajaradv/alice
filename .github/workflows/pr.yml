@@ -8,20 +8,24 @@ jobs:
     container: python:3.13-bullseye
 
     services:
-    db:
-      image: postgres:14.2-alpine
-      env:
-        POSTGRES_DB: alice_core
-        POSTGRES_USER: alice_core
-        POSTGRES_PASSWORD: alice_core
+      db:
+        image: postgres:14.2-alpine
+        env:
+          POSTGRES_DB: alice_core
+          POSTGRES_USER: alice_core
+          POSTGRES_PASSWORD: alice_core
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install Poetry
-        uses: abatilo/actions-poetry@v2.0.0
+        uses: abatilo/actions-poetry@v2
         with:
-          poetry-version: 1.4.2
+          poetry-version: latest
+
+      - name: Setup Git
+        run: |
+          git config --global --add safe.directory $GITHUB_WORKSPACE
 
       - name: Install Dependencies
         run: make install && make install-pre-commit
