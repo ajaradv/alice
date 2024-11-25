@@ -25,6 +25,9 @@ INSTALLED_APPS = [
     'django_filters',
     'debug_toolbar',
     'storages',
+
+    # Apps
+    'app.todo.apps.TodoConfig'
 ]
 
 MIDDLEWARE = [
