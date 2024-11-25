@@ -47,6 +47,9 @@ django_find_project = false
 python_files = "test_*.py"
 testpaths = ["app"]
 filterwarnings = "ignore::DeprecationWarning:^(?!node\\.).*:"
+pythonpath = [
+  "."
+]
 
 [tool.yapf]
 based_on_style = "google"
