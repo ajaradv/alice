@@ -418,6 +418,21 @@ files = [
 Django = ">=4.2"
 
 [[package]]
+name = "django-htmx"
+version = "1.21.0"
+description = "Extensions for using Django with htmx."
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "django_htmx-1.21.0-py3-none-any.whl", hash = "sha256:64bc31463017a80552b767bc216ee5700248fa72e7ccd2963495e69afbdb6abe"},
+    {file = "django_htmx-1.21.0.tar.gz", hash = "sha256:6ed3b42effd5980f22e68f36cd14ee4311bff3b6cb8435a89e27f45995691572"},
+]
+
+[package.dependencies]
+asgiref = ">=3.6"
+django = ">=4.2"
+
+[[package]]
 name = "django-model-utils"
 version = "5.0.0"
 description = "Django model mixins and utilities"
@@ -1447,4 +1462,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.13"
-content-hash = "a5cecacbf0b50076e77f8f63e69319e615bcf9a62f942a3f64924cab512a463b"
+content-hash = "3542c26db244f43a1cbf0f3e2a77f1b7b33209fbd2a217350aa5851fe473565e"
