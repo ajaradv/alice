@@ -2,10 +2,6 @@
 
 Poetry is a popular packaging tool for Python projects. It simplifies the installation, upgrading, and managing of dependencies in your project. Here's how to set up your development environment using Poetry.
 
-TODO:
-[ ] Create dev setup script.
-[ ] Makefile setup
-
 ## Prerequisites
 
 - Manage python versions with pyenv.
@@ -23,4 +19,20 @@ $ python -m venv venv
 
 ```bash
 $ poetry install
+```
+
+## Run development mode
+
+### In seperate shells run the following commands.
+
+```bash
+$ make up-dependancies-only
+```
+
+```bash
+$ make start-tailwind
+```
+
+```bash
+$ make run-server
 ```

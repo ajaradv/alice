@@ -27,6 +27,8 @@ channels = {extras = ["daphne"], version = "^4.1.0"}
 djangorestframework-simplejwt = "^5.3.1"
 django-filter = "^24.3"
 django-htmx = "^1.21.0"
+django-tailwind = {extras = ["reload"], version = "^3.8.0"}
+crispy-tailwind = "^1.0.3"
 
 
 [tool.poetry.group.dev.dependencies]

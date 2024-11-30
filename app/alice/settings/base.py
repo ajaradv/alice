@@ -7,6 +7,10 @@ DEBUG = False
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
 ALLOWED_HOSTS: List[str] = ['*']
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -26,9 +30,14 @@ INSTALLED_APPS = [
     'django_filters',
     'debug_toolbar',
     'storages',
+    'tailwind',
+    'theme',
+    'crispy_forms',
+    'crispy_tailwind',
+    'django_browser_reload',
 
     # Apps
-    'app.todo.apps.TodoConfig'
+    'app.todo.apps.TodoConfig',
 ]
 
 MIDDLEWARE = [
@@ -40,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'app.alice.urls'
@@ -113,6 +124,11 @@ MEDIA_ROOT = BASE_DIR / 'media'  # type: ignore # noqa: F821
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # type: ignore # noqa: F821
+
+# Tailwind ENV variables
+TAILWIND_APP_NAME = 'theme'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10MB
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10MB

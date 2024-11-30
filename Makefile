@@ -6,6 +6,14 @@ install:
 install-pre-commit:
 	poetry run pre-commit uninstall; poetry run pre-commit install
 
+.PHONY: start-tailwind
+start-tailwind:
+	poetry run python -m app.manage tailwind start
+
+.PHONY: build-tailwind
+build-tailwind:
+	poetry run python -m app.manage tailwind build
+
 .PHONY: lint
 lint:
 	poetry run pre-commit run --all-files
