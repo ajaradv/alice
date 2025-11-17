@@ -1,0 +1,30 @@
+<c-vars page required url required push_url="True" btn_class="btn btn-sm" container_class="join" />
+<ul class="pagination {{ container_class }}" role="navigation">
+  {% if page.has_previous %}
+    <li>
+      <a class="{{ btn_class }} join-item"
+         hx-get="{{ url }}?page={{ page.previous_page_number }}"
+         hx-target="#list"
+         {% if push_url %}hx-push-url="true"{% endif %}>Prev</a>
+    </li>
+  {% else %}
+    <li>
+      <button class="{{ btn_class }} join-item" disabled>Prev</button>
+    </li>
+  {% endif %}
+  <li>
+    <span class="{{ btn_class }} join-item btn-ghost">Page {{ page.number }} / {{ page.paginator.num_pages }}</span>
+  </li>
+  {% if page.has_next %}
+    <li>
+      <a class="{{ btn_class }} join-item"
+         hx-get="{{ url }}?page={{ page.next_page_number }}"
+         hx-target="#list"
+         {% if push_url %}hx-push-url="true"{% endif %}>Next</a>
+    </li>
+  {% else %}
+    <li>
+      <button class="{{ btn_class }} join-item" disabled>Next</button>
+    </li>
+  {% endif %}
+</ul>

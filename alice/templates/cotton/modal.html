@@ -1,0 +1,22 @@
+<c-vars modal_id required title="False" size_class="max-w-2xl" extra_class="" />
+<div x-data="{ open: false }"
+     @open-
+     {{ modal_id }}
+     .window="open=true"
+     @keydown.escape.window="open=false">
+  <dialog class="modal" :open="open">
+    <div class="modal-box {{ size_class }} {{ extra_class }}">
+      {% if title %}<h3 class="font-bold text-lg mb-2">{{ title }}</h3>{% endif %}
+      <div id="{{ modal_id }}-body">{{ slot }}</div>
+      <div class="modal-action">
+        {% if actions %}
+          {{ actions }}
+        {% else %}
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+  </dialog>
+</div>

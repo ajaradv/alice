@@ -1,0 +1,22 @@
+<c-vars kind="info" title="False" extra_class="" />
+{# DaisyUI alert with optional title, actions slot, and pass-through attrs #}
+{% if kind == "success" %}
+  {% with classes="alert alert-success " %}{% endwith %}
+{% elif kind == "error" %}
+  {% with classes="alert alert-error " %}{% endwith %}
+{% elif kind == "warning" %}
+  {% with classes="alert alert-warning " %}{% endwith %}
+{% elif kind == "info" %}
+  {% with classes="alert alert-info " %}{% endwith %}
+{% else %}
+  {% with classes="alert " %}{% endwith %}
+{% endif %}
+{% with classes=classes|add:extra_class %}
+  <div role="alert" class="{{ classes }}" {{ attrs }}>
+    <div>
+      {% if title %}<h3 class="font-bold mb-1">{{ title }}</h3>{% endif %}
+      {% if slot %}<div class="text-sm">{{ slot }}</div>{% endif %}
+      {% if actions %}<div class="mt-2">{{ actions }}</div>{% endif %}
+    </div>
+  </div>
+{% endwith %}

@@ -1,0 +1,59 @@
+{# DaisyUI button. Supports <a> or <button>, named slot "icon", boolean disabled, and arbitrary attrs via {{ attrs }} #}
+<c-vars variant="primary" size="md" href="False" type="button" extra_class="" />
+{% comment %} Build class names without dict literals for Django template compatibility {% endcomment %}
+{% with classes="btn " %}
+  {# variant #}
+  {% if variant == "neutral" %}
+    {% with classes=classes|add:"btn-neutral " %}{% endwith %}
+  {% elif variant == "primary" %}
+    {% with classes=classes|add:"btn-primary " %}{% endwith %}
+  {% elif variant == "secondary" %}
+    {% with classes=classes|add:"btn-secondary " %}{% endwith %}
+  {% elif variant == "accent" %}
+    {% with classes=classes|add:"btn-accent " %}{% endwith %}
+  {% elif variant == "ghost" %}
+    {% with classes=classes|add:"btn-ghost " %}{% endwith %}
+  {% elif variant == "outline" %}
+    {% with classes=classes|add:"btn-outline " %}{% endwith %}
+  {% elif variant == "error" %}
+    {% with classes=classes|add:"btn-error " %}{% endwith %}
+  {% elif variant == "info" %}
+    {% with classes=classes|add:"btn-info " %}{% endwith %}
+  {% elif variant == "success" %}
+    {% with classes=classes|add:"btn-success " %}{% endwith %}
+  {% elif variant == "warning" %}
+    {% with classes=classes|add:"btn-warning " %}{% endwith %}
+  {% elif variant == "link" %}
+    {% with classes=classes|add:"btn-link " %}{% endwith %}
+  {% elif variant == "soft" %}
+    {% with classes=classes|add:"btn-soft " %}{% endwith %}
+  {% elif variant == "dash" %}
+    {% with classes=classes|add:"btn-dash " %}{% endwith %}
+  {% endif %}
+  {# size #}
+  {% if size == "xs" %}
+    {% with classes=classes|add:"btn-xs " %}{% endwith %}
+  {% elif size == "sm" %}
+    {% with classes=classes|add:"btn-sm " %}{% endwith %}
+  {% elif size == "lg" %}
+    {% with classes=classes|add:"btn-lg " %}{% endwith %}
+  {% elif size == "xl" %}
+    {% with classes=classes|add:"btn-xl " %}{% endwith %}
+  {% endif %}
+  {% with classes=classes|add:extra_class %}
+    {% if href %}
+      <a class="{{ classes }}" href="{{ href }}" {{ attrs }}>
+        {% if icon %}<span class="mr-2">{{ icon }}</span>{% endif %}
+        {{ slot }}
+      </a>
+    {% else %}
+      <button class="{{ classes }}"
+              type="{{ type }}"
+              {% if disabled %}disabled{% endif %}
+              {{ attrs }}>
+        {% if icon %}<span class="mr-2">{{ icon }}</span>{% endif %}
+        {{ slot }}
+      </button>
+    {% endif %}
+  {% endwith %}
+{% endwith %}

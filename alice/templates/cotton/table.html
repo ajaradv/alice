@@ -1,0 +1,13 @@
+<c-vars zebra="False" extra_class="" />
+{% with cls="table " %}
+  {% if zebra %}
+    {% with cls=cls|add:"table-zebra " %}{% endwith %}
+  {% endif %}
+  {% with cls=cls|add:extra_class %}
+    <div class="overflow-x-auto">
+      <table class="{{ cls }}" {{ attrs }}>
+        {{ slot }}
+      </table>
+    </div>
+  {% endwith %}
+{% endwith %}

@@ -168,6 +168,7 @@ dependencies = [
     "argon2-cffi==25.1.0",
     "celery==5.5.3",
     "crispy-bootstrap5==2025.6",
+    "django-daisy>=2.0.3",
     "django==5.2.8",
     "django-allauth[mfa]==65.13.0",
     "django-anymail[mailgun]==13.1",
@@ -192,4 +193,7 @@ dependencies = [
     "uvicorn-worker==0.4.0",
     "uvicorn[standard]==0.38.0",
     "whitenoise==6.11.0",
+    "crispy-tailwind>=1.0.3",
+    "django-htmx>=1.26.0",
+    "django-cotton>=2.3.1",
 ]

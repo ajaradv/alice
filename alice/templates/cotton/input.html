@@ -1,0 +1,18 @@
+{# DaisyUI input with label/hint/error and pass-through attributes via {{ attrs }}. Use :attrs for merge. #}
+<c-vars wrapper_class="form-control w-full" label="False" hint="False" error="False" input_class="input input-bordered w-full" />
+<div class="{{ wrapper_class }}">
+  {% if label %}
+    <label class="label">
+      <span class="label-text">{{ label }}</span>
+    </label>
+  {% endif %}
+  <input class="{{ input_class }}" {{ attrs }} />
+  {% if hint %}
+    {# djlint:off #}
+    <label class="label">
+      <span class="label-text-alt">{{ hint }}</span>
+    </label>
+    {# djlint:on #}
+  {% endif %}
+  {% if error %}<div class="text-error text-sm mt-1">{{ error }}</div>{% endif %}
+</div>
