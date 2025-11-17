@@ -35,7 +35,6 @@
         hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}"}'>
     {% block body %}
       <c-navbar brand_href="{% url 'home' %}" brand_text="alice">
-      <h1 class="text-3xl font-bold underline">Alice Test</h1>
       <c-slot name="right">
       <div class="menu menu-horizontal px-1">
         <ul class="menu menu-horizontal">
